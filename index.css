@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+header{
+    display: flex;
+    height: 20vh;
+    width: 100vw;
+    flex-direction: row;
+    background-color: white;
+}
+#headerDivleft{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    color: #14248A;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2.5em;
+}
+#headerDivright{
+    height: 100%;
+    width: 50%;
+    background-color: #14248A;
+}
+main{
+    display: flex;
+    flex-direction: row;
+}
+#mainDivleft{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 50vw;
+    background-color: white;
+}
+.mainText{
+    color: #14248A;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.2em;
+    font-weight: 600;
+    padding: 13px;
+}
+#mainDivright{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 50vw;
+    background-color: #14248A;
+}
+.linkText{
+    display: flex;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: white;
+    color: #14248A;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.3em;
+    font-weight: 600;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 12%;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
