@@ -1,10 +1,14 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const usersRouter = require('./routes/users');
+const dotenv = require('dotenv').config;
 
 const port = process.env.PORT || 8000;
 
+app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/api/users', usersRouter);
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/html/index.html'));
@@ -16,6 +20,14 @@ app.get('/login', (req, res) => {
 
 app.get('/cadastro', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/html/cadastro.html'));
+})
+
+app.get('/home', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/html/home.html'));
+})
+
+app.get('/document', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/html/document.html'));
 })
 
 app.listen(port, () => {

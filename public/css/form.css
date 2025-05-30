@@ -76,7 +76,7 @@ label{
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     border: none;
 }
-#pwd{
+#pwd, #ConfirmPwd{
     height: 40px;
     border-radius: 5px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
