@@ -1,22 +1,10 @@
 [
   {
-    "email": "joao@fake.com",
-    "senha": "123"
-  },
-  {
-    "email": "joao2@fake.com",
-    "senha": "$2b$10$F7Z3VQ34z.vTy0zmvCgOwe6yYn.Ma7DFA3CY2AK/p8ZkMeWBLB85G"
-  },
-  {
-    "email": "jose@fake.com",
-    "senha": "$2b$10$/MwYuJq3Ce36NmJBS7yg.ODU7KY8JSIV2NlG0Y2hTpj8LNCFZ9Sz2"
-  },
-  {
     "email": "a@fake.com",
     "senha": "$2b$10$S.diqCaMAINFm64LC.mHMOuFK9MKyv3.Ry84Rw.fdz90S2qS.JDLO"
   },
   {
-    "email": "joao5@gmail.com",
-    "senha": "$2b$10$LUq/MPwvxn7ftx0uYovg..qORxqchHL8AEsz7uIqIql72w8ZMDa6."
+    "email": "aa@fake.com",
+    "senha": "$2b$10$MxUEgUpw6OiAo78F7fsgW.uIRTaRovcTuB5ugVPoX1jiZxEqThF6G"
   }
 ]

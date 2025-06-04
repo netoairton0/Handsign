@@ -3,12 +3,16 @@ const app = express();
 const path = require('path');
 const usersRouter = require('./routes/users');
 const dotenv = require('dotenv').config;
+const documentosRouter = require('./routes/document');
 
 const port = process.env.PORT || 8000;
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use('/api/users', usersRouter);
+
+app.use('/api/document', documentosRouter);
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/html/index.html'));

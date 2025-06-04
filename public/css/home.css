@@ -98,7 +98,10 @@ header{
     height: 20%;
     width: 80vw;
 }
-#buttonDoc{
+#linkDoc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 43%;
     width: 40%;
     border: none;
@@ -109,6 +112,8 @@ header{
     font-weight: bold;
     font-size: 1.5em;
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
 }
 #iconGerar{
     font-size: 3.7em;
