@@ -8,27 +8,42 @@
     <link rel="stylesheet" href="../css/document.css">
 </head>
 <body>
-    <header>
-        <div id="headerDiv">
-            <div>
-                <p id="headerText">HandSign</p>
+    <main id="main">
+        <div id="divMain">
+            <div id="title" contenteditable="true"></div>
+            <div id="toolbar">
+                <button id="addImageBtn">Inserir imagem</button>
+                <div class="separetor"></div>
+                <button id="printBtn">Imprimir</button>
+                <div class="separetor"></div>
+                <button onclick="formatar('bold')"><b>B</b></button>
+                <div class="separetor"></div>
+                <button onclick="formatar('italic')"><i>I</i></button>
+                <div class="separetor"></div>
+                <button onclick="formatar('underline')"><u>U</u></button>
+                <div class="separetor"></div>
+                <input type="color" id="colorPicker" title="Cor do texto">
+                <div class="separetor"></div>
+                <button onclick="formatar('justifyLeft')">Esquerda</button>
+                <div class="separetor"></div>
+                <button onclick="formatar('justifyCenter')">Centro</button>
+                <div class="separetor"></div>
+                <button onclick="formatar('justifyRight')">Direita</button>
+                <div class="separetor"></div>
+                <button onclick="setarFonte(4)">16px</button>
+                <div class="separetor"></div>
+                <button onclick="setarFonte(5)">18px</button>
+                <div class="separetor"></div>
+                <button onclick="setarFonte(6)">24px</button>
+                <div class="separetor"></div>
+                <button onclick="setarFonte(7)">32px</button>
+                <div class="separetor"></div>
             </div>
-            <div>
-                <button id="themeButton">
-                    <span id="iconTheme" class="material-symbols-outlined">
-                        wb_sunny
-                    </span>
-                </button>
-                <button id="logoutButton">
-                    <span id="iconTheme" class="material-symbols-outlined">
-                        logout
-                    </span>
-                </button>
+
+            <div id="editor" contenteditable="true">
+                
             </div>
         </div>
-    </header>
-    <main>
-        <div id="divMain"></div>
     </main>
 
     <script src="../js/document.js"></script>

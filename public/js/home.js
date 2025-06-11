@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', async () => {
+    await validarToken();
+    await carregarDocumentos();
+    criarNovoDoc();
+});
+
+async function validarToken() {
     const token = localStorage.getItem('token');
 
     if (!token) {
@@ -26,4 +32,73 @@ document.addEventListener('DOMContentLoaded', async () => {
         localStorage.removeItem('token');
         window.location.href = '/login';
     }
-});
+}
+
+async function carregarDocumentos() {
+    const token = localStorage.getItem('token');
+    const resposta = await fetch('/api/document', {
+        headers: { Authorization: `Bearer ${token}` }
+    });
+
+    const documentos = await resposta.json();
+
+    const container = document.getElementById('buttonDiv');
+    container.innerHTML = ''; 
+
+    if (!documentos.length) {
+        container.innerHTML = '<p>Nenhum documento encontrado.</p>';
+        container.className = 'tituloDoc';
+        return;
+    }
+
+    documentos.forEach(doc => {
+        const botao = document.createElement('button');
+        botao.className = 'buttonDoc';
+
+        const divTexto = document.createElement('div');
+        divTexto.className = 'textDoc';
+
+        const titulo = document.createElement('p');
+        titulo.id = 'tituloDoc';
+        titulo.textContent = doc.title;
+
+        divTexto.appendChild(titulo);
+        botao.appendChild(divTexto);
+
+        botao.addEventListener('click', () => {
+            window.location.href = `/document?id=${doc.id}`;
+        });
+
+        container.appendChild(botao);
+    });
+}
+
+function criarNovoDoc() {
+    const botaoCriar = document.getElementById('linkDoc');
+
+    botaoCriar.addEventListener('click', async (e) => {
+        e.preventDefault();
+
+        const token = localStorage.getItem('token');
+        const resposta = await fetch('/api/document', {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                title: 'Novo Documento',
+                description: '',
+                htmlContent: '<h1>Novo Documento</h1><p>Comece a digitar aqui...</p>'
+            })
+        });
+
+        const resultado = await resposta.json();
+
+        if (resposta.ok) {
+            window.location.href = `/document?id=${resultado.document.id}`;
+        } else {
+            alert('Erro ao criar documento: ' + resultado.error);
+        }
+    });
+}

@@ -13,17 +13,10 @@ if (!fs.existsSync(dbPath)) {
 
 // Rota protegida: criar novo documento
 router.post('/', verificarToken, (req, res) => {
-    const { title, description, contents } = req.body;
+    const { title, description, htmlContent } = req.body;
 
-    if (!title || !contents || !Array.isArray(contents) || contents.length === 0) {
+    if (!title || typeof htmlContent !== 'string') {
         return res.status(400).json({ error: 'Título e conteudo são obrigatorios' });
-    }
-    
-    const validTypes = ['text', 'image', 'audio'];
-    for (const item of contents) {
-        if (!item.type || !item.data || !validTypes.includes(item.type)) {
-            return res.status(400).json({ error: 'Conteudo invalido' });
-        }
     }
 
     const documents = JSON.parse(fs.readFileSync(dbPath));
@@ -33,7 +26,7 @@ router.post('/', verificarToken, (req, res) => {
         title,
         description: description || '',
         userEmail: req.usuario.email,
-        contents,
+        htmlContent,
         createdAt: new Date().toISOString(),
         updatedAt: null
     };
@@ -69,18 +62,11 @@ router.get('/:id', verificarToken, (req, res) => {
 });
 
 router.put('/:id', verificarToken, (req, res) => {
-    const { title, description, contents } = req.body;
+    const { title, description, htmlContent } = req.body;
     const documentId = parseInt(req.params.id);
 
-    if (!title || !contents || !Array.isArray(contents) || contents.length === 0) {
-        return res.status(400).json({ error: 'Título e conteudo sao obrigatórios!' });
-    }
-
-    const validTypes = ['text', 'image', 'audio'];
-    for (const item of contents) {
-        if (!item.type || !item.data || !validTypes.includes(item.type)) {
-            return res.status(400).json({ error: 'Conteudo inválido' });
-        }
+    if (!title || typeof htmlContent !== 'string') {
+        return res.status(400).json({ error: 'Título conteúdo são necessários' });
     }
 
     const documents = JSON.parse(fs.readFileSync(dbPath));
@@ -95,8 +81,8 @@ router.put('/:id', verificarToken, (req, res) => {
     documents[index] = {
         ...documents[index],
         title,
-        description,
-        contents,
+        description: description || '',
+        htmlContent,
         updatedAt: new Date().toISOString()
     };
 
