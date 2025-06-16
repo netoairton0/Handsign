@@ -38,6 +38,7 @@ header{
     border-top-right-radius: 15px;
     margin-top: 20px;
     width: 80vw;
+    height: 50px;
 }
 #divMain{
     display: flex;
@@ -59,7 +60,9 @@ button{
     text-decoration: none;
     padding: 7px;
     font-weight: bold;
-    height: 100%;
+    overflow: hidden;
+    max-width: 85px;
+    height: 50px;
 }
 button:hover{
     background-color: rgb(228, 228, 228);
@@ -72,7 +75,7 @@ button:hover{
     padding: 7px;
 }
 .separetor{
-    width: 2px;
+    width: 1px;
     background-color: black;
     height: 23px;
     margin: 0px;
@@ -98,11 +101,13 @@ button:hover{
     padding: 2px;
     min-height: 50vh;
     outline: none;
+    width: 80vw;
+    max-width: 80vw;
 }
 #editor img{
-    max-width: 80%;
-    display: block;
-    margin: 10px 0;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
 }
 input{
     margin: 2px;
@@ -126,4 +131,11 @@ font[size="7"] { font-size: 32px; }
     #editor{
       padding: 0;
     }
+}
+#vlibrasContent{
+    overflow: hidden;
+    width: 100%;
+}
+#stopRecordingBtn{
+    display: none;
 }

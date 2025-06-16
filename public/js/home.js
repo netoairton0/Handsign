@@ -97,6 +97,7 @@ function criarNovoDoc() {
 
         if (resposta.ok) {
             window.location.href = `/document?id=${resultado.document.id}`;
+            carregarDocumentos();
         } else {
             alert('Erro ao criar documento: ' + resultado.error);
         }
