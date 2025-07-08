@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', async () => {
+    
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('tema-escuro');
+    } else {
+        document.body.classList.remove('tema-escuro');
+    }
+
     await validarToken();
     await carregarDocumentos();
     criarNovoDoc();

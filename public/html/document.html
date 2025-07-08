@@ -12,80 +12,113 @@
     <main id="main">
         <div id="divMain">
             <div id="title" contenteditable="true"></div>
-            <div id="toolbar">
-                <button id="addImageBtn">
-                    <i class="material-icons">
-                        add_photo_alternate
-                    </i>
-                </button>
-                <div class="separetor"></div>
-                <button id="printBtn">
-                    <i class="material-icons">
-                        print
-                    </i>
-                </button>
-                <div class="separetor"></div>
-                <button onclick="formatar('bold')"><b>B</b></button>
-                <div class="separetor"></div>
-                <button onclick="formatar('italic')"><i>I</i></button>
-                <div class="separetor"></div>
-                <button onclick="formatar('underline')"><u>U</u></button>
-                <div class="separetor"></div>
-                <input type="color" id="colorPicker" title="Cor do texto">
-                <div class="separetor"></div>
-                <button onclick="formatar('justifyLeft')">
-                    <i class="material-icons">
-                        format_align_left
-                    </i>
-                </button>
-                <div class="separetor"></div>
-                <button onclick="formatar('justifyCenter')">
-                    <i class="material-icons">
-                        format_align_center
-                    </i>
-                </button>
-                <div class="separetor"></div>
-                <button onclick="formatar('justifyRight')">
-                    <i class="material-icons">
-                        format_align_right
-                    </i>
-                </button>
-                <div class="separetor"></div>
-                <button onclick="setarFonte(4)">16px</button>
-                <div class="separetor"></div>
-                <button onclick="setarFonte(5)">18px</button>
-                <div class="separetor"></div>
-                <button onclick="setarFonte(6)">24px</button>
-                <div class="separetor"></div>
-                <button onclick="setarFonte(7)">32px</button>
-                <div class="separetor"></div>
-                <button id="vLibras">
-                    Tradução Libras<br><br>
-                    <span id="vlibrasContent"></span>
-                </button>
-                <div class="separetor"></div>
-                <button  id="startRecordingBtn">
-                    <i class="material-icons">
-                        play_circle
-                    </i>
-                </button>
-                <div class="separetor"></div>
-                <button id="stopRecordingBtn">
-                    <i class="material-icons">
-                        pause
-                    </i>
-                </button>
-                <div class="separetor"></div>
-                <button id="deleteBtn">
-                    <i class="material-icons">
-                        delete
-                    </i>
-                </button>
-            </div>
 
-            <div id="editor" contenteditable="true">
+            <nav>
+                <div id="toolbar">
+                    <button id="addImageBtn">
+                        <i class="material-icons">
+                            add_photo_alternate
+                        </i>
+                    </button>
+
+                    <div class="separetor"></div>
+                    <button id="printBtn">
+                        <i class="material-icons">
+                            print
+                        </i>
+                    </button>
+
+                    <div class="separetor"></div>
+                    <button onclick="formatar('bold')">
+                        <b style="font-size: 1.5em;">B</b>
+                    </button>
+                    <div class="separetor"></div>
+                    <button onclick="formatar('italic')">
+                        <i style="font-size: 1.5em;">I</i>
+                    </button>
+                    <div class="separetor"></div>
+                    <button onclick="formatar('underline')">
+                        <u style="font-size: 1.5em;">U</u>
+                    </button>
+                    <div class="separetor"></div>
+                    <input type="color" id="colorPicker" title="Cor do texto">
+
+                    <div class="separetor"></div>
+                    <button onclick="formatar('justifyLeft')">
+                        <i class="material-icons">
+                            format_align_left
+                        </i>
+                    </button>
+                    <div class="separetor"></div>
+                    <button onclick="formatar('justifyCenter')">
+                        <i class="material-icons">
+                            format_align_center
+                        </i>
+                    </button>
+                    <div class="separetor"></div>
+                    <button onclick="formatar('justifyRight')">
+                        <i class="material-icons">
+                            format_align_right
+                        </i>
+                    </button>
+
+                    <div class="separetor"></div>
+                    <button onclick="setarFonte(4)">16px</button>
+                    <div class="separetor"></div>
+                    <button onclick="setarFonte(5)">18px</button>
+                    <div class="separetor"></div>
+                    <button onclick="setarFonte(6)">24px</button>
+                    <div class="separetor"></div>
+                    <button onclick="setarFonte(7)">32px</button>
+
+                    <div class="separetor"></div>
+                    <button id="vLibras">
+                        Tradução Libras<br><br>
+                        <span id="vlibrasContent"></span>
+                    </button>
+
+                    <div class="separetor"></div>
+                    <button  id="startRecordingBtn">
+                        <i class="material-icons" style="font-size: 2em">
+                            arrow_right
+                        </i>
+                    </button>
+
+                    <div class="separetor"></div>
+                    <button id="stopRecordingBtn">
+                        <i class="material-icons">
+                            pause
+                        </i>
+                    </button>
+
+                    <div class="separetor"></div>
+                    <button id="generatePdfBtn">
+                        <i class="material-icons">
+                            picture_as_pdf
+                        </i>
+                    </button>
+
+                    <div class="separetor"></div>
+                    <button id="addVideoLinkBtn">
+                        <i class="material-icons">
+                            video_call
+                        </i>
+                    </button>
+                    
+                    <div class="separetor"></div>
+                    <button id="deleteBtn">
+                        <i class="material-icons">
+                            delete
+                        </i>
+                    </button>
+                </div>
+            </nav>
+
+            <section>
+                <div id="editor" contenteditable="true">
                 
-            </div>
+                </div>
+            </section>
         </div>
     </main>
     
@@ -102,6 +135,7 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <script src="../js/document.js"></script>
 </body>

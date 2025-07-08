@@ -2,5 +2,13 @@
   {
     "email": "a@fake.com",
     "senha": "$2b$10$aV5JcFoLtmcyCyygdJVyeuQ2R8UfVQrci2j/USEAvSTkg6bd8j2Ei"
+  },
+  {
+    "email": "ola@ola.com",
+    "senha": "$2b$10$wxTmCsU9RkbkoJAiOmHjb.Rlu1cXdJHcf.rWM1bwsCx4ME5RJUw6q"
+  },
+  {
+    "email": "jao@teste.com",
+    "senha": "$2b$10$O0qxaBmahBCzssvm2UqSZOeUTSikTuJjbcQQ3qR8JyiZ7hfGj0iuq"
   }
 ]

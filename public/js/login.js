@@ -18,6 +18,6 @@ document.querySelector('form').addEventListener('submit', async function(e) {
         localStorage.setItem('token', resultado.token);
         window.location.href = '/home';
     } else {
-        alert('Erro: ' + resultado.erro);
+        alert('Erro: Credenciais Inválidas!');
     }
 });
